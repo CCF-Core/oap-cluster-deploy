@@ -9,12 +9,12 @@ source_type: packageManager
 # will be used as the Internal dns domain name if DNS is enabled. Services
 # will be discoverable under <service-name>.<namespace>.svc.<domainname>, e.g.
 # myservice.default.svc.cluster.local
-cluster_name: cluster.local
+cluster_name: .oap.dev
 
 # Account name of remote user. Ansible will use this user account to ssh into
 # the managed machines. The user must be able to use sudo without asking
 # for password unless ansible_sudo_pass is set
-#ansible_ssh_user: root
+ansible_ssh_user: cloud-user
 
 # password for the ansible_ssh_user. If this is unset you will need to set up
 # ssh keys so a password is not needed.
@@ -77,16 +77,16 @@ flannel_host_prefix: 24
 #contiv_default_gw: 172.16.0.1
 
 # Set to false to disable logging with elasticsearch
-cluster_logging: true
+cluster_logging: false
 
 # Turn to false to disable cluster monitoring with heapster and influxdb
-cluster_monitoring: true
+cluster_monitoring: false
 
 # Turn to false to disable the kube-ui addon for this cluster
-kube_ui: false
+kube_ui: true
 
 # Turn to false to disable the kube-dash addon for this cluster
-kube_dash: false
+kube_dash: true
 
 # Turn this varable to 'false' to disable whole DNS configuration.
 dns_setup: true
